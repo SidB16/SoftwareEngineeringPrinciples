@@ -1,3 +1,3 @@
 # SoftwareEngineeringPrinciples :hammer: :hammer:
-Documentation about Software Engineering Principles learnt about in school.
+Documentation on Software Engineering Principles learnt about in school.
 
