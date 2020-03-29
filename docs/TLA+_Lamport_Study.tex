@@ -1,0 +1,98 @@
+% !TeX root = ./TLA+_Lamport_Study.tex
+\documentclass{article}
+\usepackage{graphicx}
+\graphicspath{ {/home/sid16/Desktop/3342/project/images/} }
+\begin{document}
+    \section{Requirements}
+    The process of \textbf{requirements analysis} and \textbf{system spcification}
+    involves examining the behaviour of the proposes system and asking questions
+    which enable a \textbf{correct} specification to be developed. 
+    \begin{itemize}
+        \item requirements analysis
+        \item system specification 
+        \item understand behaviour
+        \item ask questions
+        \item enable correct specification to be developed
+        \item think above code level
+        \item start with specification then implementation 
+        \item specification drives design 
+        \item testing drives implemetation 
+    \end{itemize}
+
+    \textbf{Key Questions:}
+    1)Writing a spec to drive design. Using math to write formal spec. Then model checking.
+    2)Saftefy critical obligations.\\
+    \section{Thank Above Code Level by Leslie Lamport}
+ \begin{enumerate}
+        \item We should think before we start writing any coding.
+        \item If thinking without writing then you're only pretending to think.
+        \item What to write? \= blueprints of Programs called specifications.
+        \item Specifications? \= Spectrum of blueprints (i.e. simple or complex, formal(mathematical) or informal(prose)).
+        \item The best type of specifications are in middle\- called Mathematical Prose.
+        \item Code for concurrent or distributed systems is going to be complex, subtle and critical.
+        \item Thus, there is a need for tools to check your blueprint.
+        \item Therefore, if you are going to use tools then you're going to need a formal language. This is because tools dont understand prose.
+        \item So how to write a Spec? \begin{itemize}
+            \item Writing requires thinking. So how to think about programs?
+            \item You should think about programs like Scientists. \= Scientific thinking \= Make Mathematical Models of Reality.
+            \item In CS, reality consists of digital systems. \= processor chip or computer executing a program. \end{itemize}
+        \item So, Models? \= Functions and Sequences of States are the two most useful basic models, according to Leslie Lamport.
+        \item Function? \= we can model a program as a function that maps input \= output, or multiple inputs \= multiple outputs.
+        \item In Math, function is a simply a set of ordered pairs.
+            \begin{itemize}
+            \item ${<0,0>, <1,1>, <2,4>} $
+            \item square(2) = 4
+            \item all the first elements of those pairs compose the domain of the function. 
+            \end{itemize} 
+        \item To define a function, we specify it's domain: \begin{itemize}
+            \item Domain of square = NAT (0,1,2,3,4,5) vs NAT1 which excludes 0.
+            \item square(x) = $x^2$ for each x in its domain. (this is the definiton!)
+            \end{itemize}
+        \item Fuctions in math are simpler than functions in programming languages.
+        \item The Functions Model's main limitation is \= its specifies what a program does. Its does not specify how it does it.
+        \item Futhemore, other limitations are: \begin{itemize}
+            \item how do we specifiy some programs that dont just map inputs to outputs.
+            \item how do we specifiy programs, like OS which we assume run forver (b/c its convinient to think like this mathematicially).
+            \item Thus, we use the Standard Behavioural Model \= Program execution is represented by a behaviour.
+            \item Behaviour is a sequence of staes.
+            \item A state is an assignments of values to variables. 
+            \item Thus, a Program is modelled as a set of behaviours. \=  the behaviours that represent all possible executions of the program.
+            \end{itemize}
+        \item So how do we Specify a set of behaviours? \begin{itemize}
+            \item by specifying a Saftey Property and Lebniz Property.
+            \item In practise, specifying saftey just turns out to be more important (b/c thats is where most erros are likely to occur).
+        \end{itemize}
+        \item How to Specify Saftey Property? \begin{itemize}
+            \item Two things: \begin{enumerate}
+                \item The set of all possible inital states.
+                \item The next-state relation, describing all possible successor states of any state. 
+            \end{enumerate}
+            \item So what Language should use to write these two things? \= we use MATH. i.e. as show in his Euclid's Algorithm example, Lamport generates two formulas- one for set of initial states and other for next-state relation. 
+            \item So how does this work? i.e. How do we get behaviours out of those formulas.
+            \item \includegraphics[width=\textwidth]{euclid.png}
+            \item \includegraphics[width=\textwidth]{euclid2.png}
+            \item To Model non-determinism, use just have a next-state relation that allows multiple next-states for a current state. (there nothing magic or difficult about non-determinism)
+        \end{itemize}
+        \item What about Formal Specs? \= we need formal specs ONLY to apply tools. 
+        \item So we need a formal language called TLA+.
+        \item You can model check TLA+ specs \= checks all possible execution of program, on a very small model
+        \item It is extreamly EFFECTIVE and EASY to do. \begin{itemize}
+            \item You basically tell the model checker what the model is.
+            \item Models are instantiating value of constants. For eg, in Euclid's algorithm we'd have to tell checker what M and N are. 
+            \item Benefit: You can write formal correctness proofs and check them mechanically in TLA+.
+            \item We do this by writing proofs in TLA+ then use theorm prover to check the proofs.
+            \item TLA+ is formal (language of mathematica) and PLUSCAL is puedocode. It looks like a programming language.
+        \end{itemize}
+        \item Everyone thinks they are thinking but you're not writing down your thoughts, then you're fooling yourself.
+        \item What programmer should know about thinking? \= you should think before you code \= write a spec before you code.    
+        \item What code should you specify? \= any peice of code that someone else might want to use or modify.(eg: entire programmer system, class, method, or peice of code inside a method.)
+        \item What should you specify about the code? \= What it does, and how it does it. This called an Algorithrm or high-level design. 
+        \item How should you think about or specify your code? \= above the code level!- in terms of states and behaviours or functions. Mathematically/Rigiours. 
+        \item Should be thinking Mahtematically, eventhough, your're writing specs informally which psudocode i.e. PlusCal.
+        \item How do you learn to write specs? \= by learning how to write formal specs \= this will help you write infromal specs, which you will actually write.
+        \item You learn to write programs by writing them, running them and correcting your errors.
+        \item You can learn to write formal specs by writing them, running them with model check and correcting your errors.
+        \item TLA+ is a therefore a language for wiriting formal specification- it is great for \textbf{learning how to think mathemaitically.}
+        \item Writing Specs is hard b/c Thinking is hard. There is no royal road to Mathematics.
+    \end{enumerate}
+\end{document}
