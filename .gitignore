@@ -6,5 +6,6 @@
 *.synctex.gz
 *.fdb_latexmk
 *.log
-*.fsl
+*.fls
+*.out
 
