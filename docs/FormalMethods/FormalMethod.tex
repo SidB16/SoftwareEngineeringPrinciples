@@ -1,0 +1,212 @@
+% !TeX root = ./FormalMethod.tex
+
+\documentclass{article}
+\usepackage{graphicx}
+\graphicspath{ {/home/sid16/Desktop/3342/project/images/} }
+
+
+\usepackage{hyperref}
+\title{An Introduction to Formal Methods for Specification and Analysis in Software Engineering}
+\author{Siddharth Bhardwaj}
+
+\begin{document}
+    \maketitle
+    \newpage
+    \tableofcontents
+    \newpage
+
+    \section{Software Engineering and Formal Methods?}
+    \begin{enumerate}
+        \item SE Methodology is based on a reccomended development process:\begin{enumerate}
+            \item Analysis
+            \item Specification
+            \item Design
+            \item Coding
+            \item Unit Testing 
+            \item Integration and System Testing 
+            \item Maintenance
+        \end{enumerate}    
+        \item Formal Methods can be:\begin{itemize}
+            \item Be a foundation for describing complex systems.
+            \item Be a foundation for reasoning about systems.
+            \item Provide support for program development.
+        \end{itemize}
+        \item In essence, formal methods have a complementary approach to SE Methodology,
+    \end{enumerate}
+    \section{Testing: Static vs Dynamic Analysis}
+    \subsection{Static Analysis of code}
+    \begin{itemize}
+        \item Does not require exection of code.
+        \item Lexical analysis of program syntax and investigates and checks the structure and usage
+        of individual statements; often automated. 
+    \end{itemize}
+    \subsection{Dynamic Analysis of code}
+    \begin{itemize}
+        \item Program run formally under controlled condition with specific results expected.
+        \item Path and Branch Testing.
+    \end{itemize}
+    \section{What are Formal Methods Actually?}
+    \textbf{Techniques and tools based on Mathematics and formal logic}
+    Allow us to assume various forms and levels of rigor.\\
+    \section{Why Consider a Formal Method?}
+    Most of today's systems are complex. Thus, we use formal methods to systems.
+    Though keep in mind, the more compelx a system, the harder is it to model.
+    But as we will see, Modeling is only \textbf{one of 4 formal methods}.\\
+    \includegraphics[width=\textwidth]{fm.png}\\
+    \section{Formal Methods Concepts}
+    \begin{itemize}
+        \item Formal Specifications
+        \item Formal Proofs
+        \item Model Checking
+        \item Abstraction
+    \end{itemize}
+    \section{Formal Specifications}
+    \begin{itemize}
+        \item \textbf{Defintion:} Translation of prose (diagrams, tables, english text) into formal specification language.
+        \item A formal spec provides a conscise definition of high-level behavior and properties of a system.
+        \item Well-defined language sematincs suppourt formal deduction about specification.
+        \item \textbf{Informal Spec}\begin{itemize}
+            \item Free form, natural language
+            \item Ambiguity and lack of organization can lead to incompleteness, inconsistency and misunderstandings.
+        \end{itemize}
+        \item \textbf{Formatted Spec}\begin{itemize}
+            \item Standarized syntax
+            \item Basic consistency and completeness checks
+            \item Impercisce sematincs implies other sources of error may be still present \= not complete or sound. 
+        \end{itemize}
+        \item \textbf{Formal Spec}\begin{itemize}
+            \item Syntax and Semantics rigorously defined.
+            \item Percise form, perhaps mathematical.
+            \item Eliminate impercision and ambiguity.
+            \item Provide basis for mathematically verifying equivalence between specification and implementation.
+            \item May be hard to read without training.
+        \end{itemize}
+    \end{itemize}
+    \section{Formal Specs}
+    \begin{itemize}
+        \item Goal: Describe external behavior without describing or constraining implemetation.
+        \item This formal method has 2 parts:\begin{itemize}
+            \item Logic Theory:\begin{itemize}
+                \item Means by which one reasons about Specifications, properties and programs
+                \item First Order Predicate Calculus (quantification over calculus)
+                \item Second Order Predicate Calculus (quantification over relations)
+                \item Temporal Logic
+            \end{itemize}
+            \item Strcturing Theory:\begin{itemize}
+                \item Defines elements being reasoned about.
+            \end{itemize}
+        \end{itemize} 
+    \end{itemize}
+    \section{Types of Formal Specifications}
+    \subsection{Property Oriented}\begin{itemize}
+        \item State desired properties in a purely declarative way.
+        \item Involves 2 Key Concepts:\begin{itemize}
+            \item Algebraic: Data type viewed as an Algebra, Axioms state properties of data type's operations.
+            \item Axiomatic: Uses first order predicate logic, pre and post conditons Operation Specification: Describe
+            desired behaviour by providing model of system.
+        \end{itemize}
+    \end{itemize}
+    \subsection{Model Oriented}\begin{itemize}
+        \item Provide direct way of describing system behaviour(sets, squences, tuples, maps)
+        \item Involves 2 Key Concepts:\begin{itemize}
+            \item Abstract Model (in terms of previously defined mathematical objects, eg: sets, sequences, functions and mappings)
+            \item State Machines.
+        \end{itemize}
+    \end{itemize}
+    \section{Property Oriented}
+    \subsection{Uses}\begin{itemize}
+        \item Input-Output Assertions
+        \item Sets of operations
+        \item Axioms specifying behaviour of operations.
+    \end{itemize}
+    \subsection{Two Parts of Specification}\begin{itemize}
+        \item Syntax
+        \item Axioms.
+    \end{itemize}
+    \section{Model Oriented: Abstract Model Specifications}
+    \begin{itemize}
+        \item Build an abstract model of required software behaviour using mathematicially defined types (sets, relations)
+        \item Define operations by showing effects of that operation on the model.
+        \item Specification includes:\begin{itemize}
+            \item Model Types
+            \item Invariant properties of Model
+            \item For each operation \- Name, Parameters and return values.
+            \item Pre and post condtions
+        \end{itemize}
+    \end{itemize}
+    \section{Formal Proofs}
+    \begin{itemize}
+        \item Complete and convincing argument for validity of some property of some the system description.
+        \item Constructed as a series of steps, each of which is justified from a small set of rules.
+        \item Eliminates ambiguity and subjectivity inherent when drawing informal conclusions.
+        \item May be manual but usually constructed with automated assistance.
+    \end{itemize}
+    \section{Model Checking}
+    \begin{itemize}
+        \item Operational rather than analytic.
+        \item State machine model of a system is expressed in a suitable language.
+        \item Model checker determines if the given finite state machine model satisfies requirements expressed as formulas in a given logic. 
+        \item Basic method is to explore all reachable paths in a computational tree derived from the state machine model.
+    \end{itemize}
+    \section{Abstraction}
+    \begin{itemize}
+        \item Simplify and ignore irrelevant details
+        \item Focus on and generalize important central properties and characteristics.
+        \item Avoid premature commitment to design and implementation choices.
+    \end{itemize}
+    \includegraphics[width=\textwidth]{pm.png}\\
+    \section{Logical Errors in Formal Specification}
+    \subsection{Logical Inconsistency}
+    Easiest logical errors to detect.\\
+    \subsection{Accuracy}
+    does this specification mean what it intended? System invariants can help in detection.\\
+    \subsection{Completeness}
+    does the specification identify all contigencies and specify appropiate behavior for all cases? (Peer review can aid detection)\\
+    \section{Techniques for Detection of Errors in Formal Specifications}
+    Listed in increasing order of rigor and cost of application:\begin{itemize}
+        \item Inspection of formal speicification (manual)
+        \item Parsing for syntactic correctness (automated)
+        \item Type-checking for semantic consistency (automated)
+        \item Simulation/animation based on the specification (automated). 
+        \item Theorm proving, proof checking, model checking for logic anomalies.
+    \end{itemize}
+    \section{Formal Specification as a System Description}
+    \begin{itemize}
+        \item Clarify requirements and high-level design.
+        \item Articulate implicit assumptions.
+        \item Identify undocumented or unexpected assumptions.
+        \item Expose flaws.
+        \item Identify exceptions.
+        \item Evaluate test coverage.
+    \end{itemize}
+    \section{Benefits of Formal Specifications}
+    \begin{itemize}
+        \item Higher level of rigor enable a better understanding of the problem.
+        \item Defects are uncovered that would likely go unnoticed with traditional specification methods.
+        \item Identify defects earlier in life cycle.
+        \item Can guarantee the absence of certain defects. 
+        \item Formal specification language sematics allow checks for self-constency of a problem sepcification.
+        \item Formal specification enable formal proofs which can establish fundamental system properties and invariants.
+        \item Repeatable analysis means reasoning and conclusions can be checked by colleagues.
+        \item Encourages an abstract view of system-- focusing on what a proposed system should accomplish as opposed to how to accomplish it.
+        \item Abstract formal view helps seperate specification from design.0
+        \item Enhances exsisting review processes by adding a degree of rigor.
+    \end{itemize}
+    \section{Limitation to Formal Methods}
+    \begin{itemize}
+        \item Used as an adjunct to, not a replacement for, standard quality assurance methods.
+        \item Formal methods are not a panacea (solution), but can increase confidence in a product's reliability if applied with care and skill.
+        \item Very useful for consistency checks, but can not assure completeness of a specification. 
+    \end{itemize}
+    \section{Conclusion}
+    \begin{itemize}
+        \item FM are no panacea(solution).
+        \item FM can detect defects earlier in life cycle.
+        \item FM can be applied at various levels of resource investment.
+        \item FM can be integrated within exsisting project process models.
+        \item FM can improve quality assurance when applied judiciously(with good judgement or sense) to appropiate projects.
+    \end{itemize}
+    \section{Reference text}
+    \href{https://web.mit.edu/16.35/www/lecturenotes/FormalMethods.pdf}{https://web.mit.edu/16.35/www/lecturenotes/FormalMethods.pdf}
+\end{document}
+
