@@ -1,0 +1,7 @@
+
+Cocurrently do:
+- Learning-FirstJob.pdf (Leanring pedagogy): Understand, Remeber and Constantly reflect.***
+(Key is build neuron structure in brain to achieve mastery of COMPLEX skill)
+- Introduction to Mathematical Thinking course (Theory)***
+- http://lamport.azurewebsites.net/video/videos.html (implementation)***
+- 3342 event-b labs
